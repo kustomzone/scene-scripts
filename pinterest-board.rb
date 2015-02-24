@@ -5,6 +5,7 @@ require 'uri'
 require 'nokogiri'
 
 # For the vector class
+# (note: install gmath3D gem if not already installed)
 require 'gmath3D'
 
 BOARD = "ristari/recycle-upcycle-etc".downcase

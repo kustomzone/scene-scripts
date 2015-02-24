@@ -8,6 +8,7 @@ require 'twitter'
 require 'uri'
 
 # For the vector class
+# (note: install gmath3D gem if not already installed)
 require 'gmath3D'
 
 USER = "scenevr".downcase

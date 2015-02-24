@@ -6,6 +6,7 @@ require 'json'
 require 'uri'
 
 # For the vector class
+# (note: install gmath3D gem if not already installed)
 require 'gmath3D'
 
 SUBREDDIT = "aww".downcase
@@ -31,6 +32,11 @@ json["data"]["children"].each do |child|
 
   title = story["title"].slice(0,70)
   
+  # to do..
+  # why check title is sliced exactly 70 chars? 
+  # eg. no sub needed for shorter length titles.
+  # why is title not space or dot padded first?
+  
   if title.length == 70
     title = title.sub(/\.+$/, '') + "..."
   end
@@ -38,6 +44,8 @@ json["data"]["children"].each do |child|
   uri = URI.parse(story["url"])
   extension = File.extname(uri.path).downcase
 
+  # jpg, jpeg, png...
+  
   next unless extension == ".jpg" || extension == ".jpeg" || extension == ".png"
 
   puts " * #{uri.to_s}"
